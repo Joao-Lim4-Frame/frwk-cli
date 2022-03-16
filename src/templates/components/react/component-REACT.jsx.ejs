@@ -1,0 +1,35 @@
+//@Framework dev kit
+
+import { useState, useEffect } from 'react';
+<% if (props.styledComponents) { %>
+import { Container<%= props.name %> } from './styles';
+<% } else { %>
+import styles from './Styles.module.css';
+<% } %>
+
+const <%= props.name %>Component = (props) => {
+
+    const [myFirstState, setMyFirstState] = useState("Olá, esse é o component <%= props.name %>");
+
+    useEffect(() => {
+        console.log("Um exemplo de como usar o useEffect");
+
+        return () => {
+            console.log("Sempre que o ciclo de vida do seu component se encerrar, essa função é chamada");
+        }
+    }, []);
+
+    return (
+        <% if (props.styledComponents) { %>
+        <Container<%= props.name%>>
+            <h1> { myFirstState } </h1>
+        </Container<%= props.name%>>
+        <% } else { %>
+        <div className={styles.container<%= props.name%>}>
+            <h1> { myFirstState } </h1>
+        </div>
+        <% } %>
+    )
+} 
+
+export { <%= props.name %>Component }

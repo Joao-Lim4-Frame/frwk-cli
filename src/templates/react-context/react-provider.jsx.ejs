@@ -1,0 +1,22 @@
+import React, { ReactNode, useContext, useReducer } from "react";
+import { <%= props.name %>Context } from "./<%= props.name %>.context";
+import { <%= props.name %>Reducer } from "./<%= props.name %>.reducer";
+import { InitialData<%= props.name %>Context } from "./<%= props.name %>.initialData";
+
+
+
+const <%= props.name %>Provider = ({children}) => {
+
+    const [ <%= props.name.toLowerCase() %>State, <%= props.name.toLowerCase() %>Dispatch ] = useReducer(<%= props.name %>Reducer,InitialData<%= props.name %>Context);
+
+    return (
+        <<%= props.name %>Context.Provider value={{ <%= props.name.toLowerCase() %>State, <%= props.name.toLowerCase() %>Dispatch }}>
+            {children}
+        </<%= props.name %>Context.Provider>
+    )
+}
+
+
+export const use<%= props.name %>Context = () => useContext(<%= props.name %>Context);
+
+export { <%= props.name %>Provider };

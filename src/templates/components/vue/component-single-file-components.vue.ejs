@@ -1,0 +1,22 @@
+//@Framework dev kit
+
+<template>
+    <div class="container-default">
+        <h1> {{ title }} </h1>
+    </div>
+</template>
+<script>
+  export default {
+    data() {
+      return { title: "Olá, esse é o component <%= props.name %>" }
+    },
+    methods: { }
+  };
+</script>
+
+<style scoped>
+    .container-default {
+        width: 100%; 
+        text-align: center;
+    }
+</style>

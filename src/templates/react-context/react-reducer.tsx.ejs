@@ -1,0 +1,23 @@
+import { InitialData<%= props.name %>ContextType } from "./<%= props.name %>.initialData";
+
+export type ActionTypeReducer = {
+    type: "setMyValue" | "set";
+    fildName?: "myValue";
+    payload: any
+}
+
+const <%= props.name %>Reducer = (state: InitialData<%= props.name %>ContextType, action: ActionTypeReducer) => {
+
+    const { payload, type, fildName } = action;
+
+    switch (type) {
+        case "setMyValue":
+            return {...state, myValue: payload};
+        case "set":
+            return {...state, [fildName!]: payload};
+        default:
+            return {...state};
+    }
+}
+
+export { <%= props.name %>Reducer };

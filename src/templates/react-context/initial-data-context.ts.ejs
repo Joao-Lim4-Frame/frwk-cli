@@ -1,0 +1,13 @@
+//@Framework dev kit
+
+interface InitialData<%= props.name %>ContextType {
+    [key: string]: any, 
+    myValue: string
+}
+
+const InitialData<%= props.name %>Context: InitialData<%= props.name %>ContextType = {
+    myValue: "Meu valor inicial",
+}
+
+export type { InitialData<%= props.name %>ContextType }
+export { InitialData<%= props.name %>Context }

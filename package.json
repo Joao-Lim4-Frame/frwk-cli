@@ -3,7 +3,6 @@
     "version": "0.0.1",
     "description": "frwk-dev-cli CLI",
     "private": true,
-    "frmkProject": "react",
     "types": "build/types/types.d.ts",
     "bin": {
         "frwk-dev-cli": "bin/frwk-dev-cli"

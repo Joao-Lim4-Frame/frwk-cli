@@ -33,11 +33,13 @@ const newProjectTypeObject = (devDependencies: object,dependencies:object, valid
 export const generateProjectTypeForDependencies = (dependencies:object ,devDependencies: object): IProjectType => {
     const projectsTypes = Constants.projectsType;
 
+    const isReact = "react" in dependencies;
+
     if("vue" in dependencies) return newProjectTypeObject(devDependencies, dependencies, projectsTypes.VUE, "VUE");
 
     if("@angular/core" in dependencies) return newProjectTypeObject(devDependencies, dependencies, projectsTypes.ANGULAR, "ANGULAR");
 
-    if("react" in dependencies) {
+    if(isReact) {
         if("react-native" in dependencies) return newProjectTypeObject(devDependencies, dependencies, projectsTypes["REACT-NATIVE"], "REACT-NATIVE");
 
         return newProjectTypeObject(devDependencies,dependencies, projectsTypes.REACT, "REACT");

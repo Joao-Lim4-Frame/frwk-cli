@@ -1,0 +1,15 @@
+const <%= props.name %>Reducer = (state, action) => {
+
+    const { payload, type, fildName } = action;
+
+    switch (type) {
+        case "setMyValue":
+            return {...state, myValue: payload};
+        case "set":
+            return {...state, [fildName]: payload};
+        default:
+            return {...state};
+    }
+}
+
+export { <%= props.name %>Reducer };

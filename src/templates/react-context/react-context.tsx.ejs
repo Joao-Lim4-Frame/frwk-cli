@@ -1,0 +1,17 @@
+import React, { createContext } from 'react';
+import { ActionTypeReducer } from './<%= props.name %>.reducer';
+import { InitialData<%= props.name %>Context, InitialData<%= props.name %>ContextType } from './<%= props.name%>.initialData';
+
+
+
+export type <%= props.name %>ContextType = {
+    <%= props.name.toLowerCase() %>State: InitialData<%= props.name %>ContextType
+    <%= props.name.toLowerCase() %>Dispatch: React.Dispatch<ActionTypeReducer>;
+}
+
+const <%= props.name %>Context = createContext<InitialData<%= props.name %>ContextType>({
+    <%= props.name.toLowerCase() %>State: InitialData<%= props.name %>Context,
+    <%= props.name.toLowerCase() %>Dispatch: (): void => {}
+});
+
+export { <%= props.name %>Context };

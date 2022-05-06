@@ -1,0 +1,9 @@
+import React, { createContext } from 'react';
+
+
+const <%= props.name %>Context = createContext({
+    <%= props.name.toLowerCase() %>State,
+    <%= props.name.toLowerCase() %>Dispatch,
+});
+
+export { <%= props.name %>Context };

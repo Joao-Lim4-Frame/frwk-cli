@@ -1,0 +1,16 @@
+//@Framework dev kit
+
+Vue.component('fwrk-<%= props.name.toLowerCase() %>', {
+    props: [],
+    data() {
+        return { title: "Olá, esse é o component <%= props.name %>" }
+    },
+    methods: { },
+    render() {
+        return (
+            <div style="width: 100%; text-align: center;">
+                <h1> {{ title }} </h1>
+            </div>
+        ) 
+    }
+});
